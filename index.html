@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. K. Kalaivani - Academic Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .bio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .bio-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .bio-item h3 {
+            color: #764ba2;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .bio-item p {
+            color: #555;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .skill-tag {
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: #667eea;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .contact-links a:hover {
+            background: #764ba2;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="profile.png" alt="Dr. K. Kalaivani" class="profile-photo">
+            <h1>Dr. K. KALAIVANI</h1>
+            <p>Associate Professor | Computer Science & Engineering</p>
+            <p>School of Computer Science & Artificial Intelligence</p>
+            <p style="font-size: 0.95em; margin-top: 10px;">SR University, Warangal – 506371</p>
+        </header>
+
+        <div class="content">
+            <section class="section">
+                <h2>About Me</h2>
+                <p>To secure a challenging academic position in the field of Computer Science, specializing in <strong>Machine Learning</strong>, where I can integrate high-impact teaching with innovative research. Committed to advancing the frontiers of machine learning through scholarly contributions while actively supporting academic leadership and fostering student excellence.</p>
+            </section>
+
+            <section class="section">
+                <h2>Statistics</h2>
+                <div class="bio-grid">
+                    <div class="bio-item" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center;">
+                        <h3 style="color: white; font-size: 2.5em; margin: 0;">18+</h3>
+                        <p style="color: white;">Years Teaching</p>
+                    </div>
+                    <div class="bio-item" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center;">
+                        <h3 style="color: white; font-size: 2.5em; margin: 0;">19+</h3>
+                        <p style="color: white;">Journal Publications</p>
+                    </div>
+                    <div class="bio-item" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center;">
+                        <h3 style="color: white; font-size: 2.5em; margin: 0;">18+</h3>
+                        <p style="color: white;">Conference Papers</p>
+                    </div>
+                    <div class="bio-item" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center;">
+                        <h3 style="color: white; font-size: 2.5em; margin: 0;">4</h3>
+                        <p style="color: white;">Awards Received</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Biodata</h2>
+                <div class="bio-grid">
+                    <div class="bio-item">
+                        <h3>Name</h3>
+                        <p>Dr. K. Kalaivani</p>
+                    </div>
+                    <div class="bio-item">
+                        <h3>Current Position</h3>
+                        <p>Associate Professor</p>
+                    </div>
+                    <div class="bio-item">
+                        <h3>Department</h3>
+                        <p>Computer Science & Engineering</p>
+                    </div>
+                    <div class="bio-item">
+                        <h3>Institution</h3>
+                        <p>SR University, Warangal</p>
+                    </div>
+                    <div class="bio-item">
+                        <h3>Specialization</h3>
+                        <p>Machine Learning & AI</p>
+                    </div>
+                    <div class="bio-item">
+                        <h3>Experience</h3>
+                        <p>18+ Years Teaching | 12+ Years Engineering</p>
+                    </div>
+                    <div class="bio-item">
+                        <h3>Email</h3>
+                        <p>kalaivani.sai21@gmail.com</p>
+                    </div>
+                    <div class="bio-item">
+                        <h3>Contact</h3>
+                        <p>+91 8148731972, 8668008031</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Skills & Expertise</h2>
+                <div class="skills">
+                    <span class="skill-tag">Machine Learning</span>
+                    <span class="skill-tag">Artificial Intelligence</span>
+                    <span class="skill-tag">Big Data Analytics</span>
+                    <span class="skill-tag">Deep Learning</span>
+                    <span class="skill-tag">Data Mining</span>
+                    <span class="skill-tag">Cloud Computing</span>
+                    <span class="skill-tag">IoT</span>
+                    <span class="skill-tag">Python Programming</span>
+                    <span class="skill-tag">Research & Development</span>
+                    <span class="skill-tag">Academic Leadership</span>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Education</h2>
+                <div class="bio-item" style="margin-bottom: 20px;">
+                    <h3>Ph.D. in Computer Science & Engineering (2021)</h3>
+                    <p><strong>Anna University, Chennai, Tamil Nadu, India</strong></p>
+                    <p style="margin-top: 10px;">🎓 Ph.D. Coursework Excellence: Secured A Grade CGPA in all subjects</p>
+                    <p>✨ International Recognition: Dr. Basim Al Hadidi from Al-Balqa Applied University, Jordan served as Foreign Examiner</p>
+                    <p>📚 Research: Heart disease prediction using soft computing techniques</p>
+                </div>
+                <div class="bio-item" style="margin-bottom: 20px;">
+                    <h3>M.E. Computer Science & Engineering (2013)</h3>
+                    <p><strong>Anna University, Chennai</strong></p>
+                    <p>CGPA: 8.55 | First Class with Distinction</p>
+                    <p style="color: #d97706; font-weight: 600; margin-top: 5px;">🏆 Anna University Rank Holder</p>
+                </div>
+                <div class="bio-item" style="margin-bottom: 20px;">
+                    <h3>M.Phil. (2007)</h3>
+                    <p><strong>Periyar University, Salem, Tamil Nadu</strong></p>
+                    <p>First Class</p>
+                </div>
+                <div class="bio-item" style="margin-bottom: 20px;">
+                    <h3>Master of Computer Application - MCA (2005)</h3>
+                    <p><strong>Alagappa University, Karaikudi, Tamil Nadu</strong></p>
+                    <p>First Class</p>
+                </div>
+                <div class="bio-item">
+                    <h3>B.Sc. Computer Science (2000)</h3>
+                    <p><strong>Madurai Kamaraj University, Tamil Nadu</strong></p>
+                    <p>First Class</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Awards & Recognition</h2>
+                <div class="bio-grid">
+                    <div class="bio-item" style="border-left-color: #d97706;">
+                        <h3>🏆 Best Faculty Award 2025</h3>
+                        <p>Kumari Mangrove Foundation NGO for Research & Development, Kanyakumari</p>
+                        <p style="font-size: 0.9em; color: #666;">May 23, 2025</p>
+                    </div>
+                    <div class="bio-item" style="border-left-color: #d97706;">
+                        <h3>🎖️ Jyestha Acharya & Guru Shreshta Award</h3>
+                        <p>Bharat Education Excellence Award - By Vice Chancellor, Andhra University</p>
+                        <p style="font-size: 0.9em; color: #666;">April 21, 2023</p>
+                    </div>
+                    <div class="bio-item" style="border-left-color: #d97706;">
+                        <h3>⭐ Best Faculty Award 2022-2023</h3>
+                        <p>National Research Academy, Puducherry, India</p>
+                    </div>
+                    <div class="bio-item" style="border-left-color: #d97706;">
+                        <h3>🥇 Anna University Rank Holder</h3>
+                        <p>Award from Dr. G Gnanasambandam for 8.55 CGPA in M.E. CSE (2014)</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Professional Experience</h2>
+                <div class="bio-item" style="margin-bottom: 20px;">
+                    <h3>Associate Professor (Current)</h3>
+                    <p><strong>SR University, Warangal | 2025 - Present</strong></p>
+                    <p>Department of Computer Science & Engineering</p>
+                    <p>School of Computer Science & Artificial Intelligence</p>
+                    <p style="margin-top: 10px; color: #059669;">✓ Recognized as Supervisor Under JNTUH R&D Cell</p>
+                </div>
+                <div class="bio-item" style="margin-bottom: 20px;">
+                    <h3>Associate Professor & Head of Department</h3>
+                    <p><strong>Vignana Bharathi Institute of Technology, Hyderabad | 2022 - 2025</strong></p>
+                    <p>Department of Information Technology</p>
+                    <p style="margin-top: 10px;">Led NAAC, NBA accreditation | Chairman – Board of Studies | Established Centre of Excellence for Microsoft Azure</p>
+                </div>
+                <div class="bio-item" style="margin-bottom: 20px;">
+                    <h3>Associate Professor</h3>
+                    <p><strong>Sree Vidyanikethan Engineering College, Tirupati | 2021 - 2022</strong></p>
+                </div>
+                <div class="bio-item">
+                    <h3>Assistant Professor</h3>
+                    <p><strong>PSNA College of Engineering & Technology, Dindigul | 2014 - 2021</strong></p>
+                    <p>7+ Years in CSE Department</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Research & Publications</h2>
+                <div class="bio-grid">
+                    <div class="bio-item">
+                        <h3>📚 Books</h3>
+                        <p>2 Books Published (NotionPress, Scientific International Publishing)</p>
+                    </div>
+                    <div class="bio-item">
+                        <h3>📑 Journal Papers</h3>
+                        <p>19+ Publications in SCI, SCOPUS, Web of Science</p>
+                    </div>
+                    <div class="bio-item">
+                        <h3>🎓 Conferences</h3>
+                        <p>18+ International & National Conference Papers</p>
+                    </div>
+                    <div class="bio-item">
+                        <h3>🔬 Patents</h3>
+                        <p>2 Patents Published (5G Networks, IoT COVID Testing)</p>
+                    </div>
+                </div>
+                <div class="bio-item" style="margin-top: 20px;">
+                    <h3>Research IDs</h3>
+                    <p><strong>ORCID:</strong> 0000-0002-0249-1590 | <strong>Scopus ID:</strong> 57356266000</p>
+                    <p><strong>Web of Science:</strong> AID-5880-2022 | <strong>Thomson ID:</strong> rid25341</p>
+                </div>
+            </section>
+        </div>
+
+        <footer class="footer">
+            <h3>Get In Touch</h3>
+            <div class="contact-links">
+                <a href="mailto:kalaivani.sai21@gmail.com">Email</a>
+                <a href="tel:+918148731972">Phone</a>
+                <a href="https://www.linkedin.com/in/dr-kalaivani-k-37906a1aa/" target="_blank">LinkedIn</a>
+                <a href="https://scholar.google.com/citations?user=tHpPLIsAAAAJ" target="_blank">Google Scholar</a>
+                <a href="https://orcid.org/0000-0002-0249-1590" target="_blank">ORCID</a>
+            </div>
+            <p style="margin-top: 20px; opacity: 0.8;">&copy; 2025 Dr. K. Kalaivani. All rights reserved.</p>
+            <p style="opacity: 0.7; font-size: 0.9em;">Last Updated: November 2025</p>
+        </footer>
+    </div>
+</body>
+</html>

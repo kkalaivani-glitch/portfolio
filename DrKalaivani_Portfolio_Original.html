@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. K. Kalaivani - Academic Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+            --accent: #db2777;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--gradient);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--gradient);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            background: rgba(255,255,255,0.2);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin-bottom: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: var(--gradient);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Awards */
+        .award-item {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--light);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .award-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        /* Publications */
+        .publication-item {
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary);
+            background: var(--light);
+            margin-bottom: 1rem;
+            border-radius: 4px;
+        }
+
+        .publication-item h4 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-meta {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* Education Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gradient);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -0.6rem;
+            top: 0;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--primary);
+        }
+
+        /* Skills/Subjects */
+        .skill-tag {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            margin: 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        /* Research IDs */
+        .research-ids {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .research-id {
+            background: var(--light);
+            padding: 1rem;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .research-id strong {
+            color: var(--primary);
+        }
+
+        .research-id a {
+            color: var(--accent);
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Print Button */
+        .print-btn {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 2rem 0;
+            transition: all 0.3s;
+        }
+
+        .print-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: #10b981;
+            color: white;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #fbbf24 0%, #fbbf24 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 30%;
+            background-position: 0 90%;
+            padding: 0 0.2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Dr. K. Kalaivani</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Dr. K. KALAIVANI</h2>
+            <p class="subtitle">Associate Professor | Computer Science & Engineering</p>
+            <p class="subtitle">School of Computer Science & Artificial Intelligence</p>
+            <p style="font-size: 1.1rem; margin-top: 1rem;">SR University, Warangal – 506371</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>kalaivani.sai21@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>8148731972, 8668008031</span>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/dr-kalaivani-k-37906a1aa/" target="_blank">LinkedIn</a>
+                <a href="https://scholar.google.com/citations?user=tHpPLIsAAAAJ" target="_blank">Google Scholar</a>
+                <a href="https://orcid.org/0000-0002-0249-1590" target="_blank">ORCID</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Stats -->
+        <div class="stats">
+            <div class="stat-card">
+                <span class="stat-number">18+</span>
+                <span>Years Teaching</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">19+</span>
+                <span>Journal Publications</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">18+</span>
+                <span>Conference Papers</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">4</span>
+                <span>Awards Received</span>
+            </div>
+        </div>
+
+        <!-- Career Objective -->
+        <section id="about">
+            <h2 class="section-title">Career Objective</h2>
+            <div class="card">
+                <p style="font-size: 1.1rem; line-height: 1.8;">
+                    To secure a challenging academic position in the field of Computer Science, specializing in <span class="highlight">Machine Learning</span>, where I can integrate high-impact teaching with innovative research. Committed to advancing the frontiers of machine learning through scholarly contributions while actively supporting academic leadership and fostering student excellence.
+                </p>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education">
+            <h2 class="section-title">Educational Qualifications</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="card">
+                        <h3>Ph.D. in Computer Science & Engineering <span class="badge">2021</span></h3>
+                        <p><strong>Anna University, Chennai, Tamil Nadu, India</strong></p>
+                        <p><em>June 2016 - December 2021</em></p>
+                        <ul style="margin-top: 1rem; line-height: 1.8;">
+                            <li>✨ <strong>International Recognition:</strong> Dr. Basim Al Hadidi from Al-Balqa Applied University, Jordan served as Foreign Examiner</li>
+                            <li>🎓 <strong>Ph.D. Coursework Excellence:</strong> Secured A Grade CGPA in all subjects</li>
+                            <li>📚 Research on heart disease prediction using soft computing techniques</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="card">
+                        <h3>M.E. Computer Science & Engineering <span class="badge">2013</span></h3>
+                        <p><strong>Anna University, Chennai</strong></p>
+                        <p><em>CGPA: 8.55 | First Class with Distinction</em></p>
+                        <p style="color: #d97706; font-weight: 600; margin-top: 0.5rem;">🏆 Anna University Rank Holder</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="card">
+                        <h3>M.Phil. <span class="badge">2007</span></h3>
+                        <p><strong>Periyar University, Salem, Tamil Nadu</strong></p>
+                        <p><em>First Class</em></p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="card">
+                        <h3>Master of Computer Application (MCA) <span class="badge">2005</span></h3>
+                        <p><strong>Alagappa University, Karaikudi, Tamil Nadu</strong></p>
+                        <p><em>First Class</em></p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="card">
+                        <h3>B.Sc. Computer Science <span class="badge">2000</span></h3>
+                        <p><strong>Madurai Kamaraj University, Tamil Nadu</strong></p>
+                        <p><em>First Class</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience">
+            <h2 class="section-title">Professional Experience</h2>
+            <p style="font-size: 1.2rem; color: var(--primary); font-weight: 600; margin-bottom: 2rem;">
+                Total Teaching Experience: <span class="highlight">18 Years</span> | Engineering Experience: <span class="highlight">12 Years</span>
+            </p>
+
+            <div class="card">
+                <h3>Associate Professor (Current) <span class="badge">2025 - Present</span></h3>
+                <p><strong>SR University, Warangal</strong></p>
+                <p>Department of Computer Science & Engineering</p>
+                <p>School of Computer Science & Artificial Intelligence</p>
+                <p style="margin-top: 1rem; color: #059669;">✓ Recognized as Supervisor Under JNTUH R&D Cell</p>
+                <p style="color: #059669;">✓ Ratified as Assistant Professor by JNTUH – 2191-220430-142239</p>
+            </div>
+
+            <div class="card">
+                <h3>Associate Professor & Head of Department <span class="badge">2022 - 2025</span></h3>
+                <p><strong>Vignana Bharathi Institute of Technology, Hyderabad</strong></p>
+                <p>Department of Information Technology</p>
+                <p><em>June 2022 - September 2025</em></p>
+                <ul style="margin-top: 1rem; line-height: 1.8;">
+                    <li>Led NAAC, NBA, and JNTUH-FFC accreditation visits</li>
+                    <li>Chairman – Board of Studies (BoS)</li>
+                    <li>Established Centre of Excellence for Microsoft Azure</li>
+                    <li>Organized multiple workshops and academic events</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Associate Professor <span class="badge">2021 - 2022</span></h3>
+                <p><strong>Sree Vidyanikethan Engineering College, Tirupati</strong></p>
+                <p>Department of Computer Science & Engineering</p>
+            </div>
+
+            <div class="card">
+                <h3>Assistant Professor <span class="badge">2014 - 2021</span></h3>
+                <p><strong>PSNA College of Engineering & Technology, Dindigul</strong></p>
+                <p>Department of Computer Science & Engineering</p>
+                <p><em>7+ Years</em></p>
+            </div>
+        </section>
+
+        <!-- Awards -->
+        <section id="awards">
+            <h2 class="section-title">Awards & Recognition</h2>
+            <div class="grid-2">
+                <div class="award-item">
+                    <span class="award-icon">🏆</span>
+                    <div>
+                        <h4>Best Faculty Award 2025</h4>
+                        <p>Kumari Mangrove Foundation NGO for Research & Development, Kanyakumari</p>
+                        <p style="color: #64748b; font-size: 0.9rem;">May 23, 2025</p>
+                    </div>
+                </div>
+
+                <div class="award-item">
+                    <span class="award-icon">🎖️</span>
+                    <div>
+                        <h4>Jyestha Acharya & Guru Shreshta Award</h4>
+                        <p>Bharat Education Excellence Award - By Vice Chancellor, Andhra University</p>
+                        <p style="color: #64748b; font-size: 0.9rem;">April 21, 2023</p>
+                    </div>
+                </div>
+
+                <div class="award-item">
+                    <span class="award-icon">⭐</span>
+                    <div>
+                        <h4>Best Faculty Award 2022-2023</h4>
+                        <p>National Research Academy, Puducherry, India</p>
+                    </div>
+                </div>
+
+                <div class="award-item">
+                    <span class="award-icon">🥇</span>
+                    <div>
+                        <h4>Anna University Rank Holder Recognition</h4>
+                        <p>Award from Dr. G Gnanasambandam for 8.55 CGPA in M.E. CSE</p>
+                        <p style="color: #64748b; font-size: 0.9rem;">2014</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research -->
+        <section id="research">
+            <h2 class="section-title">Research Contributions</h2>
+            
+            <div class="card">
+                <h3>Research Areas</h3>
+                <div style="margin-top: 1rem;">
+                    <span class="skill-tag">Machine Learning</span>
+                    <span class="skill-tag">Artificial Intelligence</span>
+                    <span class="skill-tag">Big Data Analytics</span>
+                    <span class="skill-tag">Heart Disease Prediction</span>
+                    <span class="skill-tag">Soft Computing</span>
+                    <span class="skill-tag">Deep Learning</span>
+                    <span class="skill-tag">Data Mining</span>
+                    <span class="skill-tag">Cloud Computing</span>
+                    <span class="skill-tag">IoT</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Academic Leadership & Responsibilities</h3>
+                <ul style="line-height: 2;">
+                    <li>✓ Session Chair - 8th International Conference on Applied Sciences (ICASETM), Jakarta, Indonesia (Aug 2025)</li>
+                    <li>✓ International Advisory Committee Member - ICASETM 2025</li>
+                    <li>✓ Keynote Speaker - 8th International Conference on Multi-Disciplinary Research (ICMDRSE-2025)</li>
+                    <li>✓ Resource Person - "Data Analytics Mastery with KNIME" Workshop (April 2024)</li>
+                    <li>✓ Cisco Networking Academy Instructor - Certified (April 2023)</li>
+                    <li>✓ ICT Celonis Mentor (2019-2020)</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Research IDs & Profiles</h3>
+                <div class="research-ids">
+                    <div class="research-id">
+                        <strong>ORCID:</strong>
+                        <a href="https://orcid.org/0000-0002-0249-1590" target="_blank">0000-0002-0249-1590</a>
+                    </div>
+                    <div class="research-id">
+                        <strong>Scopus ID:</strong>
+                        <span>57356266000</span>
+                    </div>
+                    <div class="research-id">
+                        <strong>Web of Science:</strong>
+                        <span>AID-5880-2022</span>
+                    </div>
+                    <div class="research-id">
+                        <strong>Thomson ID:</strong>
+                        <span>rid25341</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Professional Memberships</h3>
+                <p style="font-size: 1.1rem; margin-top: 1rem;">
+                    <span class="skill-tag">ISTE - Life Member</span>
+                    <span class="skill-tag">IAENG - Life Member</span>
+                    <span class="skill-tag">IFERP - Life Member</span>
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Reviewer Activities</h3>
+                <p style="line-height: 1.8;">Acting as reviewer for prestigious journals and conferences including <strong>Soft Computing</strong>, <strong>IGI Global</strong>, <strong>International Journal of Fuzzy Systems</strong>, and various <strong>IEEE Conferences</strong>.</p>
+            </div>
+        </section>
+
+        <!-- Publications -->
+        <section id="publications">
+            <h2 class="section-title">Publications</h2>
+
+            <div class="card">
+                <h3>📚 Books Published</h3>
+                <div class="publication-item">
+                    <h4>1. Object-Oriented Programming (CS 6456)</h4>
+                    <p class="publication-meta">NotionPress, 2017 | ISBN: 978-1-947586-13-0</p>
+                </div>
+                <div class="publication-item">
+                    <h4>2. Cloud Computing - The Essential of Next Generation Computing</h4>
+                    <p class="publication-meta">Scientific International Publishing House, 2021 | ISBN: 9789356254039</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>🔬 Patents Published</h3>
+                <div class="publication-item">
+                    <h4>1. Optimal Video and Audio Streaming in Dense 5G Networks</h4>
+                    <p class="publication-meta">Published: January 22, 2021</p>
+                </div>
+                <div class="publication-item">
+                    <h4>2. IOT-Based Omicron Emerged in COVID-19 Testing Booth with Thermal Image Detection</h4>
+                    <p class="publication-meta">Published: February 25, 2022</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>📑 Selected Journal Publications (19+ Total)</h3>
+                
+                <div class="publication-item">
+                    <h4>A novel and secured email classification using deep neural network with bidirectional long short-term memory</h4>
+                    <p>A. Poobalan, K. Ganapriya, K. Kalaivani, K. Parthiban</p>
+                    <p class="publication-meta">Computer Speech & Language, Volume 89, 2025 | ISSN: 0885-2308</p>
+                </div>
+
+                <div class="publication-item">
+                    <h4>Heart disease diagnosis using optimized features of hybridized ALCSOGA algorithm and LSTM classifier</h4>
+                    <p>Kalaivani, K., Uma Maheswari, N., & Venkatesh, R.</p>
+                    <p class="publication-meta">Network: Computation in Neural Systems, 2022 | DOI: 10.1080/0954898X.2022.2061062</p>
+                </div>
+
+                <div class="publication-item">
+                    <h4>Classification of Heart Disease Using MFO Based Neural Network on MRI Images</h4>
+                    <p>K Kalaivani, N UM, R V.</p>
+                    <p class="publication-meta">Current Medical Imaging, 2021 | PMID: 33573572</p>
+                </div>
+
+                <p style="margin-top: 1.5rem; color: var(--primary); font-weight: 600;">
+                    ➕ 16 more journal publications in Machine Learning, AI, IoT, and Data Science
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>📖 Book Chapters (4 - SCOPUS Indexed)</h3>
+                <div class="publication-item">
+                    <h4>Navigating the digital frontier: data privacy and security challenges in society 5.0</h4>
+                    <p class="publication-meta">Academic Press, 2025 | SCOPUS | DOI: 10.1016/B978-0-443-33498-6.00022-4</p>
+                </div>
+                <div class="publication-item">
+                    <h4>Cheque truncation mechanism using blockchain</h4>
+                    <p class="publication-meta">IGI Global, 2023 | SCOPUS | DOI: 10.4018/978-1-6684-9867-5.ch010</p>
+                </div>
+                <p style="margin-top: 1rem; color: var(--primary);">+ 2 more book chapters</p>
+            </div>
+
+            <div class="card">
+                <h3>🎓 Conference Papers (18+ Publications)</h3>
+                <p style="line-height: 1.8;">
+                    Published in prestigious international and national conferences including IEEE, ICIIECS, ICECDS, and various other renowned academic forums on topics including Machine Learning, Deep Learning, IoT, Big Data Analytics, and Healthcare Applications.
+                </p>
+            </div>
+        </section>
+
+        <!-- Subjects Handled -->
+        <section id="teaching">
+            <h2 class="section-title">Teaching Expertise</h2>
+            
+            <div class="card">
+                <h3>Post Graduate (M.E. CSE)</h3>
+                <div style="margin-top: 1rem;">
+                    <span class="skill-tag">Machine Learning Techniques</span>
+                    <span class="skill-tag">Information Retrieval Techniques</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Under Graduate (B.E./B.Tech.)</h3>
+                <div style="margin-top: 1rem;">
+                    <span class="skill-tag">Computer Architecture</span>
+                    <span class="skill-tag">Artificial Intelligence</span>
+                    <span class="skill-tag">Machine Learning</span>
+                    <span class="skill-tag">Software Project Management</span>
+                    <span class="skill-tag">Design & Analysis of Algorithms</span>
+                    <span class="skill-tag">Data Structures</span>
+                    <span class="skill-tag">Object Oriented Programming</span>
+                    <span class="skill-tag">Database Management Systems</span>
+                    <span class="skill-tag">Software Engineering</span>
+                    <span class="skill-tag">Python Programming</span>
+                    <span class="skill-tag">Compiler Design</span>
+                    <span class="skill-tag">Computer Networks</span>
+                    <span class="skill-tag">Cloud Computing</span>
+                    <span class="skill-tag">Telehealth Technology</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Training & Certifications Attended</h3>
+                <p style="font-weight: 600; margin-bottom: 1rem;">70+ Professional Development Programs including:</p>
+                <ul style="line-height: 2;">
+                    <li>✓ NEP 2020 Orientation Programme (UGC, JNTUH) - 13 Days</li>
+                    <li>✓ AI for Educators - Institute of Public Enterprise (5 Days)</li>
+                    <li>✓ Salesforce Platform Developer 1 - ICT Academy (AICTE)</li>
+                    <li>✓ NPTEL - Introduction to Machine Learning (3 Months)</li>
+                    <li>✓ AWS, Azure, Cloud Computing - Multiple Programs</li>
+                    <li>✓ Research Methodology, IPR, Data Analytics - AICTE, NITTTR</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Online Certifications (42+ Courses)</h3>
+                <div style="margin-top: 1rem;">
+                    <span class="skill-tag">NPTEL - Machine Learning</span>
+                    <span class="skill-tag">Coursera - Python, Java, C++</span>
+                    <span class="skill-tag">Cisco - Cybersecurity, IoT</span>
+                    <span class="skill-tag">Microsoft - Generative AI</span>
+                    <span class="skill-tag">ICT Academy - Celonis, Process Mining</span>
+                    <span class="skill-tag">Automation Anywhere - RPA</span>
+                    <span class="skill-tag">MathWorks - ML, Deep Learning</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <h2 class="section-title">Contact Information</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Professional Address</h3>
+                    <p style="line-height: 1.8;">
+                        <strong>Dr. K. Kalaivani</strong><br>
+                        Associate Professor<br>
+                        Department of Computer Science & Engineering<br>
+                        School of Computer Science & Artificial Intelligence<br>
+                        SR University, Warangal – 506371<br>
+                        Telangana, India
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Get In Touch</h3>
+                    <p style="line-height: 2;">
+                        <strong>Email:</strong> kalaivani.sai21@gmail.com<br>
+                        <strong>Mobile:</strong> +91 8148731972, 8668008031<br>
+                        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/dr-kalaivani-k-37906a1aa/" target="_blank">LinkedIn Profile</a><br>
+                        <strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=tHpPLIsAAAAJ" target="_blank">View Publications</a>
+                    </p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <button class="print-btn" onclick="window.print()">📄 Download/Print CV</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Dr. K. Kalaivani | All Rights Reserved</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">Last Updated: November 2025</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease-out';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
